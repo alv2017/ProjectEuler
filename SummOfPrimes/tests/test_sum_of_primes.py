@@ -1,16 +1,70 @@
-import pytest
 from random import randint
-from ..sum_of_primes import is_prime, get_primes, get_sums_of_primes
+
+import pytest
+
+from ..sum_of_primes import get_primes, get_sums_of_primes, is_prime
 
 
 @pytest.fixture
 def prime_numbers():
-    return [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+    return [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83,
+        89,
+        97,
+    ]
 
 
 @pytest.fixture
 def non_prime_numbers():
-    return [0, 1, 4, 6, 8, 9, 10, 12, 14, 15, 16, 18, 20, 21, 22, 24, 25, 26, 27, 28, 30, 32, 33, 34, 35]
+    return [
+        0,
+        1,
+        4,
+        6,
+        8,
+        9,
+        10,
+        12,
+        14,
+        15,
+        16,
+        18,
+        20,
+        21,
+        22,
+        24,
+        25,
+        26,
+        27,
+        28,
+        30,
+        32,
+        33,
+        34,
+        35,
+    ]
 
 
 @pytest.fixture
@@ -36,8 +90,9 @@ def n_primes_dict():
         7: [2, 3, 5, 7],
         8: [2, 3, 5, 7],
         9: [2, 3, 5, 7],
-        10: [2, 3, 5, 7]
+        10: [2, 3, 5, 7],
     }
+
 
 @pytest.fixture
 def sums_of_primes_dict():
@@ -52,12 +107,11 @@ def sums_of_primes_dict():
         7: [0, 0, 2, 5, 5, 10, 10, 17],
         8: [0, 0, 2, 5, 5, 10, 10, 17, 17],
         9: [0, 0, 2, 5, 5, 10, 10, 17, 17, 17],
-        10: [0, 0, 2, 5, 5, 10, 10, 17, 17, 17, 17]
+        10: [0, 0, 2, 5, 5, 10, 10, 17, 17, 17, 17],
     }
 
 
 class TestIsPrime:
-
     def test_is_prime_valid_prime_numbers(self, prime_numbers):
         for num in prime_numbers:
             assert is_prime(num)
