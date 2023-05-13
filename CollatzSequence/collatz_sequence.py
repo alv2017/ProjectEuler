@@ -61,3 +61,12 @@ class CollatzSequence:
             return self.sequence_max_length_memory[n]
         else:
             raise ValueError("Item value can not exceed the max_size parameter.")
+
+
+if __name__ == "__main__":
+    # HackerRank solution imitation
+    input_data = [10, 15, 20]
+    max_input = max(input_data)
+    cs = CollatzSequence(max_input)
+    for val in input_data:
+        print(cs.get_max_length_item(val))
