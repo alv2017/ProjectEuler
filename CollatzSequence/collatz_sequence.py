@@ -1,4 +1,3 @@
-
 class CollatzSequence:
     sequence_length_memory = [0, 1]
     sequence_max_length_memory = [0, 1]
@@ -26,7 +25,7 @@ class CollatzSequence:
 
     @staticmethod
     def collatz_sequence(start: int) -> list:
-        """ Returns Collatz sequence for a given start value
+        """Returns Collatz sequence for a given start value
         :param start: Collatz sequence start value
         :return: Collatz sequence
         """
@@ -46,7 +45,9 @@ class CollatzSequence:
 
         while n != 1:
             if n < self.max_size + 1 and self.sequence_length_memory[n] > 0:
-                self.sequence_length_memory[start] = slen + self.sequence_length_memory[n]
+                self.sequence_length_memory[start] = (
+                    slen + self.sequence_length_memory[n]
+                )
                 return self.sequence_length_memory[start]
 
             slen += 1
@@ -59,6 +60,4 @@ class CollatzSequence:
         if n <= self.max_size:
             return self.sequence_max_length_memory[n]
         else:
-            raise ValueError(f"Item value can not exceed the max_size parameter.")
-
-
+            raise ValueError("Item value can not exceed the max_size parameter.")

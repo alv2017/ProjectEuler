@@ -1,4 +1,5 @@
 import pytest
+
 from ..collatz_sequence import CollatzSequence
 
 
@@ -10,7 +11,34 @@ def known_collatz_sequences():
         3: [3, 10, 5, 16, 8, 4, 2, 1],
         9: [9, 28, 14, 7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1],
         23: [23, 70, 35, 106, 53, 160, 80, 40, 20, 10, 5, 16, 8, 4, 2, 1],
-        100: [100, 50, 25, 76, 38, 19, 58, 29, 88, 44, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1]
+        100: [
+            100,
+            50,
+            25,
+            76,
+            38,
+            19,
+            58,
+            29,
+            88,
+            44,
+            22,
+            11,
+            34,
+            17,
+            52,
+            26,
+            13,
+            40,
+            20,
+            10,
+            5,
+            16,
+            8,
+            4,
+            2,
+            1,
+        ],
     }
 
 
@@ -44,7 +72,7 @@ def known_collatz_max_length_items():
         17: 9,
         18: 18,
         19: 19,
-        20: 19
+        20: 19,
     }
 
 
@@ -72,9 +100,10 @@ class TestCollatzSequence:
             calculated_max_sequence_element = cs.get_max_length_item(start)
             assert calculated_max_sequence_element == expected_max_sequence_element
 
-    def test_get_max_length_item_parameter_raises_exception_when_max_size_exceeded(self):
+    def test_get_max_length_item_parameter_raises_exception_when_max_size_exceeded(
+        self,
+    ):
         max_size = 100
         cs = CollatzSequence(max_size)
         with pytest.raises(ValueError):
             cs.get_max_length_item(max_size + 1)
-
