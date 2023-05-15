@@ -7,8 +7,8 @@ there are exactly 6 routes to the bottom right corner.
 
 ## Limitations
 
-1 <= N <= 500
-1 <= M <= 500
+- 1 <= N <= 500
+- 1 <= M <= 500
 
 ## Task
 
