@@ -3,7 +3,7 @@ class InvalidTriangleData(Exception):
 
 
 class Triangle:
-    def __init__(self, height: int, row_data: list[list]):
+    def __init__(self, height: int, row_data: list):
         self.height = height
         self.row_data = self.validate_row_data(height, row_data)
 
